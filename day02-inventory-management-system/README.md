@@ -48,4 +48,4 @@ The IDs `abcde` and `axcye` are close, but they differ by two characters (the se
 
 ## References
 
-- https://adventofcode.com/2018/day/1
+- https://adventofcode.com/2018/day/2
