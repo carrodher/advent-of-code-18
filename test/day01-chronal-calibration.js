@@ -2,6 +2,8 @@ const expect = require('chai').expect;
 const fs = require('fs');
 const freq = require('../day01-chronal-calibration/frequency.js');
 
+const input = fs.readFileSync('day01-chronal-calibration/input.txt').toString().split('\n').map(Number);
+
 describe('Day 01 - Chronal calibration tests', () => {
   describe('Frequency match', () => {
     it('[+1, -2, +3, +1] should return 3', () => {
@@ -25,7 +27,6 @@ describe('Day 01 - Chronal calibration tests', () => {
     });
 
     it('Input file should return 576', () => {
-      const input = fs.readFileSync('day01-chronal-calibration/input.txt').toString().split('\n').map(Number);
       const finalFrequency = freq.calculateFrequency(input);
       expect(finalFrequency).to.equal(576);
     });
@@ -58,7 +59,6 @@ describe('Day 01 - Chronal calibration tests', () => {
     });
 
     it('Input file should return 77674', () => {
-      const input = fs.readFileSync('day01-chronal-calibration/input.txt').toString().split('\n').map(Number);
       const repeatedFrequency = freq.findRepeatedFrequency(input);
       expect(repeatedFrequency).to.equal(77674);
     });

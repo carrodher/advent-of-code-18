@@ -2,9 +2,9 @@ const expect = require('chai').expect;
 const fs = require('fs');
 const rec = require('../day04-repose-record/repose.js');
 
-const recordsFileOrdered = fs.readFileSync('day04-repose-record/input.txt').toString().split('\n').sort();
+const input = fs.readFileSync('day04-repose-record/input.txt').toString().split('\n').sort();
 
-const sampleOrdered = [
+const sample = [
   '[1518-11-01 00:00] Guard #10 begins shift',
   '[1518-11-01 00:05] falls asleep',
   '[1518-11-01 00:25] wakes up',
@@ -27,24 +27,24 @@ const sampleOrdered = [
 describe('Day 04 - Repose record', () => {
   describe('What minute does that guard spend asleep the most? (guardID * minute)', () => {
     it('Example record list should return 240', () => {
-      const result = rec.getAsleepTheMost(sampleOrdered);
+      const result = rec.getAsleepTheMost(sample);
       expect(result).to.equal(240);
     });
 
     it('Input file record list should return 60438', () => {
-      const result = rec.getAsleepTheMost(recordsFileOrdered);
+      const result = rec.getAsleepTheMost(input);
       expect(result).to.equal(60438);
     });
   });
 
   describe('which guard is most frequently asleep on the same minute? (guardID * minute)', () => {
     it('Example record list should return 4455', () => {
-      const result = rec.getFrequentlyAsleepSameMinute(sampleOrdered);
+      const result = rec.getFrequentlyAsleepSameMinute(sample);
       expect(result).to.equal(4455);
     });
 
     it('Input file record list should return 47989', () => {
-      const result = rec.getFrequentlyAsleepSameMinute(recordsFileOrdered);
+      const result = rec.getFrequentlyAsleepSameMinute(input);
       expect(result).to.equal(47989);
     });
   });
